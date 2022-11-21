@@ -5,10 +5,11 @@ import java.util.*;
 public class Atividade_21_11_2022 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        int placar = 0;
+        int veizada = 0;
 
 
-
-        while(true) {
+        for(int i = 0; i<=3;i++) {
             if (sorteioOperacao().equals("+")) {
                 int resultado1 = sorteioNumero1();
                 int resultado2 = sorteioNumero2();
@@ -20,6 +21,7 @@ public class Atividade_21_11_2022 {
                 if (resposta != soma) {
                     System.out.println("ERROU!");
                 } else System.out.println("ACERTOU!");
+                placar = placar +1;
             } else if (sorteioOperacao().equals("-")) {
                 System.out.println("Pense Rápido: " + sorteioNumero1() + " - " + sorteioNumero2());
                 int resultado1 = sorteioNumero1();
@@ -31,6 +33,8 @@ public class Atividade_21_11_2022 {
                 if (resposta != subtracao) {
                     System.out.println("ERROU!");
                 } else System.out.println("ACERTOU!");
+                placar = placar +1;
+
 
             } else if (sorteioOperacao().equals("/")) {
                 System.out.println("Pense Rápido: " + sorteioNumero1() + " / " + sorteioNumero2());
@@ -43,29 +47,29 @@ public class Atividade_21_11_2022 {
                 if (resposta != divisao) {
                     System.out.println("ERROU!");
                 } else System.out.println("ACERTOU!");
+                placar = placar +1;
+
 
             } else if (sorteioOperacao().equals("*")) {
                 System.out.println("Pense Rápido: " + sorteioNumero1() + " * " + sorteioNumero2());
                 int resultado1 = sorteioNumero1();
                 int resultado2 = sorteioNumero2();
-                int soma = resultado1 * resultado2;
+                int multiplicacao = resultado1 * resultado2;
 
                 System.out.println("Digite a Resposta: ");
                 int resposta = scan.nextInt();
-                if (resposta != soma) {
+                if (resposta != multiplicacao) {
                     System.out.println("ERROU!");
                 } else System.out.println("ACERTOU!");
+                placar = placar +1;
+
 
             }
         }
+        System.out.println("Placar Total: " + placar);
+
     }
 
-    public static void forma_questao(){
-        int numero_1 = sorteioNumero1();
-        sorteioOperacao();
-        sorteioNumero2();
-        System.out.println("Pense Rápido: " + sorteioNumero1() +" "+ sorteioOperacao() +" "+ sorteioNumero2() );
-    }
     public static String sorteioOperacao() {
         List<String> operacao = new ArrayList<String>();
         operacao.add("+");
